@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from typing import Optional, List, Dict
+from typing import Optional, Dict
 
-from config_controller.defs.module_config import ModuleConfig
+from config_controller.defs import ModuleConfig
 from modules.base import BaseModule
 
 

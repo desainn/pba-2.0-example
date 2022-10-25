@@ -1,6 +1,4 @@
-from typing import Optional
-
-from config_controller.defs.module_config import ModuleConfig
+from config_controller.defs import ModuleConfig
 
 
 class BaseModule:

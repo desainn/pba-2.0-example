@@ -1,10 +1,8 @@
 import dataclasses
 from dataclasses import dataclass
-from typing import Optional, Dict, Any
+from typing import Optional, Dict
 
-from omegaconf import MISSING
-
-from config_controller.defs.module_config import ModuleConfig
+from config_controller.defs import ModuleConfig
 from modules.base import BaseModule
 
 
