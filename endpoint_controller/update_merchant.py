@@ -38,4 +38,6 @@ class UpdateMerchant(ControllerBase):
             )
         )
 
+        return '200'
+
 

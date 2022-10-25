@@ -13,7 +13,6 @@ class BaseModule:
         print('Module: {}'.format(self.__class__.__name__))
         print('Enabled: {}'.format(self.enabled))
         print('Parameters: {}'.format(self.parameters.__str__()))
-        # print('Submodules: {}'.format(self.submodules.keys() if self.submodules else None))
         print('Submodules: {}'.format(self.submodules.__str__()))
         print(('*' * 40) + '\n')
 

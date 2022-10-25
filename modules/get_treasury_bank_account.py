@@ -8,14 +8,6 @@ from modules.defs import TreasuryBankAccountSubmodules
 from modules.get_transfer_history import GetTransferHistoryModule, GetTransferHistory
 
 
-# @dataclass
-# class GetTreasuryBankAccountModule(ModuleConfig):
-#     enabled: bool = False
-#     parameters: Optional[Dict] = None
-#     submodules: Optional[Dict[str, GetTransferHistoryModule]] = dataclasses.field(default_factory=lambda: {
-#         'get_transfer_history': GetTransferHistoryModule
-#     })
-
 @dataclass
 class GetTreasuryBankAccountModule(ModuleConfig):
     enabled: bool = False
@@ -28,7 +20,6 @@ class GetTreasuryBankAccountModule(ModuleConfig):
 class GetTreasuryBankAccount(BaseModule):
     def __init__(self, config):
         super(GetTreasuryBankAccount, self).__init__(config)
-        # self.submodules: GetTransferHistoryModule
 
     def execute(self, args, submodules: TreasuryBankAccountSubmodules):
         self.__repr__()
@@ -41,6 +32,6 @@ class GetTreasuryBankAccount(BaseModule):
         print(self.submodules)
 
         # [MODULE] GET_TRANSFER_HISTORY
-        treasury_account = submodules.get_transfer_history.execute()
+        transfer_history = submodules.get_transfer_history.execute()
 
         return 'real merchant data'
