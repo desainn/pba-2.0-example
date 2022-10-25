@@ -1,0 +1,15 @@
+get_financing_package:
+  enabled: false
+  submodules:
+  parameters:
+
+get_treasury_bank_account:
+  enabled: true
+  submodules:
+    - get_transfer_history
+
+get_transfer_history:
+  enabled: false
+  parameters:
+    history_limit: 1
+  submodules:
