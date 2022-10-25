@@ -3,6 +3,7 @@ from typing import Optional, Dict
 
 from config_controller.defs import ModuleConfig
 from modules.base import BaseModule
+from modules.defs import GetFinancingPackageSubmodules
 
 
 @dataclass
@@ -16,7 +17,7 @@ class GetFinancingPackage(BaseModule):
     def __init__(self, config):
         super(GetFinancingPackage, self).__init__(config)
 
-    def execute(self):
+    def execute(self, args, submodules: GetFinancingPackageSubmodules):
         self.__repr__()
         if not self.should_execute:
             print('Skip')

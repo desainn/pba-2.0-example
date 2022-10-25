@@ -25,24 +25,6 @@ class GetTreasuryBankAccountModule(ModuleConfig):
     ])
 
 
-# class GetTreasuryBankAccount(BaseModule):
-#     def __init__(self, config):
-#         super(GetTreasuryBankAccount, self).__init__(config)
-#         # self.submodules: GetTransferHistoryModule
-#
-#     def execute(self, get_transfer_history: GetTransferHistory):
-#         self.__repr__()
-#         if not self.should_execute:
-#             print('Skip')
-#             return 'mocked merchant data'
-#
-#         # invoke RPC calls and return
-#         print('Execute')
-#
-#         treasury_account = get_transfer_history.execute()
-#
-#         return 'real merchant data'
-
 class GetTreasuryBankAccount(BaseModule):
     def __init__(self, config):
         super(GetTreasuryBankAccount, self).__init__(config)
