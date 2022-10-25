@@ -4,6 +4,7 @@ from typing import Optional, Dict, List
 
 from config_controller.defs import ModuleConfig
 from modules.base import BaseModule
+from modules.defs import TreasuryBankAccountSubmodules
 from modules.get_transfer_history import GetTransferHistoryModule, GetTransferHistory
 
 
@@ -24,12 +25,30 @@ class GetTreasuryBankAccountModule(ModuleConfig):
     ])
 
 
+# class GetTreasuryBankAccount(BaseModule):
+#     def __init__(self, config):
+#         super(GetTreasuryBankAccount, self).__init__(config)
+#         # self.submodules: GetTransferHistoryModule
+#
+#     def execute(self, get_transfer_history: GetTransferHistory):
+#         self.__repr__()
+#         if not self.should_execute:
+#             print('Skip')
+#             return 'mocked merchant data'
+#
+#         # invoke RPC calls and return
+#         print('Execute')
+#
+#         treasury_account = get_transfer_history.execute()
+#
+#         return 'real merchant data'
+
 class GetTreasuryBankAccount(BaseModule):
     def __init__(self, config):
         super(GetTreasuryBankAccount, self).__init__(config)
         # self.submodules: GetTransferHistoryModule
 
-    def execute(self, get_transfer_history: GetTransferHistory):
+    def execute(self, args, submodules: TreasuryBankAccountSubmodules):
         self.__repr__()
         if not self.should_execute:
             print('Skip')
@@ -37,8 +56,9 @@ class GetTreasuryBankAccount(BaseModule):
 
         # invoke RPC calls and return
         print('Execute')
+        print(self.submodules)
 
-        treasury_account = get_transfer_history.execute()
+        # [MODULE] GET_TRANSFER_HISTORY
+        treasury_account = submodules.get_transfer_history.execute()
 
         return 'real merchant data'
-
